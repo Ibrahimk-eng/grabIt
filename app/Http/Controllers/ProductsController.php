@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class FormController extends Controller
+class ProductsController extends Controller
 {
 
     public function viewForm()
@@ -25,20 +26,23 @@ class FormController extends Controller
     //Form area
     public function addForm(Request $request)
     {
+        $product = new Product;
+
         $request->validate([
             'name' => 'required',
             'price' => 'required',
             'description' => 'required',
-            
+
         ]);
 
-        $name = $request->name;
-        $price = $request->price;
-        $description = $request->description;
-        
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
 
-        $db = DB::select("INSERT INTO product (name, price, description) VALUES ('$name', '$price', '$description')");
 
+
+        // $product = Product::select("INSERT INTO products (name, price, description) VALUES ('$name', '$price', '$description')");
+        $product->save();
 
         echo "Inserted";
     }
