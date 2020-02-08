@@ -11,7 +11,7 @@ class FormController extends Controller
     public function viewForm()
     {
 
-        $dbstd = DB::select('select * from form_db');
+        $dbstd = DB::select('select * from product');
         dd($dbstd);
 
         // foreach ($dbstd as $value) {
@@ -26,23 +26,18 @@ class FormController extends Controller
     public function addForm(Request $request)
     {
         $request->validate([
-            'first_name' => 'required|max:12',
-            'last_name' => 'max:10',
-            'email_adress' => 'required|max:60|email',
-            'password' => 'required|max:30',
-            'phone_number' => 'required|max:11|min:11|digits:11',
-            'adress' => 'required|max:200',
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            
         ]);
 
-        $firstname = $request->first_name;
-        $lastname = $request->last_name;
-        $emailadress = $request->email_adress;
-        $password = $request->password;
-        $phone = $request->phone_number;
-        $birth = $request->date_of_birth;
-        $adress = $request->adress;
+        $name = $request->name;
+        $price = $request->price;
+        $description = $request->description;
+        
 
-        $db = DB::select("INSERT INTO form_db (firstname, lastname, emailadress, password, phone, birth, adress) VALUES ('$firstname', '$lastname', '$emailadress', '$password','$phone', '$birth', '$adress')");
+        $db = DB::select("INSERT INTO product (name, price, description) VALUES ('$name', '$price', '$description')");
 
 
         echo "Inserted";
