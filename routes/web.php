@@ -55,6 +55,6 @@ Route::post('/contact', 'ContactController@addContact')->name('addContact');
 
 //Form routes
 Route::get('/form', 'PagesController@Form')->name('form');
-Route::post('/form', 'FormController@addForm')->name('addForm');
+Route::post('/form', 'ProductsController@addForm')->name('addForm');
 // Route::get('/viewForm', 'FormController@viewForm')->name('viewForm');
-Route::get('/viewFormData', 'FormController@viewForm')->name('viewForm');
+Route::get('/viewFormData', 'ProductsController@viewForm')->name('viewForm');
