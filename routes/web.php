@@ -58,3 +58,4 @@ Route::get('/form', 'PagesController@Form')->name('form');
 Route::post('/form', 'ProductsController@addForm')->name('addForm');
 // Route::get('/viewForm', 'FormController@viewForm')->name('viewForm');
 Route::get('/viewFormData', 'ProductsController@viewForm')->name('viewForm');
+Route::get('/products', 'ProductsController@viewProducts')->name('viewProducts');

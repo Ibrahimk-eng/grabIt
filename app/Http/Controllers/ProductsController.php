@@ -5,24 +5,16 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-// use Image;
 
 class ProductsController extends Controller
 {
 
-    public function viewForm()
+    public function viewProducts()
     {
 
-        $dbstd = DB::select('select * from product');
-        dd($dbstd);
-
-        // foreach ($dbstd as $value) {
-        //     echo $value;
-        // }
-        // echo $db['0']['id'];
-        // // return view('MainTheme/updateForm');
-
-        return view('MainTheme/viewFormData');
+        $products = Product::get();
+        return view('MainTheme/productsList',compact('products'));
+        
     }
     //Form area
     public function addForm(Request $request)
