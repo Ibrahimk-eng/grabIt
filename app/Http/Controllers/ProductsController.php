@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+// use Image;
 
 class ProductsController extends Controller
 {
@@ -32,16 +33,15 @@ class ProductsController extends Controller
             'name' => 'required',
             'price' => 'required',
             'description' => 'required',
+            'image' => 'required',
 
         ]);
 
         $product->name = $request->name;
         $product->price = $request->price;
         $product->description = $request->description;
-
-
-
-        // $product = Product::select("INSERT INTO products (name, price, description) VALUES ('$name', '$price', '$description')");
+        $product->image = $request->file('image')->store('images/products');
+        
         $product->save();
 
         echo "Inserted";

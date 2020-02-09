@@ -3,7 +3,7 @@
 @section('body')
 
 <div class="container" style="    box-sizing: border-box; display: block; margin-top: 155px;">
-    <form action="{{route('form')}}" method="POST">
+    <form action="{{route('form')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="firstName">Name</label>
@@ -18,6 +18,10 @@
         <div class="form-group">
             <label>Description</label>
             <input type="text" name="description" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Product Image</label>
+            <input type="file" name="image" class="form-control">
         </div>
 
        
