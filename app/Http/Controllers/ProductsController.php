@@ -25,14 +25,20 @@ class ProductsController extends Controller
             'name' => 'required',
             'price' => 'required',
             'description' => 'required',
-            'image' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
         ]);
 
         $product->name = $request->name;
         $product->price = $request->price;
         $product->description = $request->description;
-        $product->image = $request->file('image')->store('images/products');
+        
+        //get file extension
+        $imageName = time().'.'.$request->image->extension();  
+        //store file to the public / given path
+        $product->image = $request->image->move(public_path('images'), $imageName);
+        //store with only file name to retrieve with the name only.
+        $product->image = $imageName;
         
         $product->save();
 

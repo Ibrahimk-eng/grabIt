@@ -11,7 +11,6 @@
                 <th scope="col">Description</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
-                <!-- $product->image -->
             </tr>
         </thead>
         <tbody>
@@ -22,7 +21,7 @@
                 <td>{{$product->price}}</td>
                 <td>{{$product->description}}</td>
                 
-                <td><img src="{{ asset($product->image) }}" width="100"></td>
+                <td><img src="{{ asset('images/' . $product->image) }}" width="100"></td>
                 <td> <a href="" class="btn">Edit</a>|
                   <a href="" data-toggle="modal" class="btn">Delete</a></td>
             </tr>
