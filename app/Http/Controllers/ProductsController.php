@@ -16,6 +16,7 @@ class ProductsController extends Controller
         return view('MainTheme/productsList',compact('products'));
         
     }
+
     //Form area
     public function addForm(Request $request)
     {
@@ -43,5 +44,11 @@ class ProductsController extends Controller
         $product->save();
 
         echo "Inserted";
+    }
+
+    public function product_edit($id)
+    {
+        $product = Product::find($id);
+        return view('MainTheme.updateProduct')->with('product', $product);
     }
 }
