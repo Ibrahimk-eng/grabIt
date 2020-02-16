@@ -22,7 +22,7 @@
                 <td>{{$product->description}}</td>
                 
                 <td><img src="{{ asset('images/' . $product->image) }}" width="100"></td>
-                <td> <a href="" class="btn">Edit</a>|
+                <td> <a href="{{route('updateProducts',$product->id)}}" class="btn">Edit</a>|
                   <a href="" data-toggle="modal" class="btn">Delete</a></td>
             </tr>
             @endforeach

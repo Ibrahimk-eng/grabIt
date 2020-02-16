@@ -61,3 +61,4 @@ Route::get('/viewFormData', 'ProductsController@viewForm')->name('viewForm');
 Route::get('/products', 'ProductsController@viewProducts')->name('viewProducts');
 Route::get('/updateProducts/{id}', 'ProductsController@product_edit')->name('updateProducts');
 
+

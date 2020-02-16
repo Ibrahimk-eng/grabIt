@@ -50,5 +50,6 @@ class ProductsController extends Controller
     {
         $product = Product::find($id);
         return view('MainTheme.updateProduct')->with('product', $product);
+        // 
     }
 }
