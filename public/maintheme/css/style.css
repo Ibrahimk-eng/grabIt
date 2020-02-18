@@ -5907,3 +5907,16 @@ h6 {
 .formContent {
     margin-left: 19px;
 }
+
+.deleteButton{
+    width: 33%!important; 
+    display:block; 
+    float: left; 
+    margin-left:10px;
+}
+
+.editButton{
+    width: 33%!important; 
+    display:block; 
+    float: left;
+}

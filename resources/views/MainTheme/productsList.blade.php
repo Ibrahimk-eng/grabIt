@@ -22,8 +22,12 @@
                 <td>{{$product->description}}</td>
                 
                 <td><img src="{{ asset('images/' . $product->image) }}" width="100"></td>
-                <td> <a href="{{route('updateProducts',$product->id)}}" class="btn">Edit</a>|
-                  <a href="" data-toggle="modal" class="btn">Delete</a></td>
+                <td> <a href="{{route('updateProducts',$product->id)}}" class="editButton btn btn-primary btn-block">Edit</a>
+                    <form action="{{ route('deleteProduct',$product->id) }}" method="post">
+                        {{ csrf_field() }}
+                        <button type="submit" class="deleteButton btn btn-danger btn-block">Delete</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

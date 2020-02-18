@@ -60,5 +60,8 @@ Route::post('/form', 'ProductsController@addForm')->name('addForm');
 Route::get('/viewFormData', 'ProductsController@viewForm')->name('viewForm');
 Route::get('/products', 'ProductsController@viewProducts')->name('viewProducts');
 Route::get('/updateProducts/{id}', 'ProductsController@product_edit')->name('updateProducts');
+Route::post('/updateProducts/{id}', 'ProductsController@product_update')->name('updateProductsPost');
+Route::post('/delete/{id}', 'ProductsController@product_delete')->name('deleteProduct');
+
 
 

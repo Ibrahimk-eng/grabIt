@@ -2,7 +2,7 @@
 
 @section('body')
 <div class="container" style="    box-sizing: border-box; display: block; margin-top: 155px;">
-    <form action="{{route('updateProducts', $product->id)}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('updateProductsPost', $product->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="firstName">Name</label>
